@@ -12,47 +12,6 @@
 </head>
 <body>
   <a href="#main-content" class="skip-link">Pular para conteúdo principal</a>
-  <div id="accessibility-bar" class="accessibility-bar" role="toolbar" aria-label="Ferramentas de acessibilidade">
-    <div class="accessibility-bar-inner">
-      <span class="accessibility-label">Acessibilidade:</span>
-      <button id="font-increase" class="accessibility-btn" aria-label="Aumentar tamanho da fonte" title="Aumentar fonte (A+)">
-        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M10 3V17M3 10H17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <path d="M6 6H14M6 14H14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
-      </button>
-      <button id="font-decrease" class="accessibility-btn" aria-label="Diminuir tamanho da fonte" title="Diminuir fonte (A-)">
-        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M3 10H17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <path d="M6 6H14M6 14H14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
-      </button>
-      <button id="font-reset" class="accessibility-btn" aria-label="Tamanho de fonte padrão" title="Fonte normal">
-        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M6 6H14M6 10H14M6 14H14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
-      </button>
-      <button id="contrast-toggle" class="accessibility-btn" aria-label="Alternar alto contraste" title="Alto contraste">
-        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/>
-          <path d="M10 2V18M2 10H18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
-      </button>
-      <button id="grayscale-toggle" class="accessibility-btn" aria-label="Alternar escala de cinza" title="Preto e branco">
-        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="7" cy="10" r="3" fill="currentColor"/>
-          <circle cx="13" cy="10" r="3" stroke="currentColor" stroke-width="1.5" fill="none"/>
-        </svg>
-      </button>
-      <button id="invert-toggle" class="accessibility-btn" aria-label="Inverter cores" title="Inverter cores">
-        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="3" y="3" width="7" height="7" fill="currentColor"/>
-          <rect x="10" y="10" width="7" height="7" fill="none" stroke="currentColor" stroke-width="1.5"/>
-          <path d="M10 3V10M3 10H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
-      </button>
-    </div>
-  </div>
   <header class="header">
     <div class="header-bar">
       <div class="container header-inner">
@@ -90,6 +49,49 @@
             <a href="contato.html" class="btn-contato">Contato</a>
           </div>
         </nav>
+        <div class="accessibility-header-wrap">
+          <button id="accessibility-toggle" class="accessibility-header-btn" aria-label="Abrir menu de acessibilidade" aria-expanded="false" aria-controls="accessibility-panel" title="Acessibilidade">
+            <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+              <circle cx="12" cy="8" r="2.5" fill="currentColor"/>
+              <path d="M12 11v6M9 14h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M8 17l2-4h4l2 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="accessibility-header-label">Acessibilidade</span>
+          </button>
+          <div id="accessibility-panel" class="accessibility-panel" role="dialog" aria-label="Ferramentas de acessibilidade" aria-hidden="true">
+            <div class="accessibility-panel-content">
+              <div class="accessibility-group">
+                <span class="accessibility-group-label">Tamanho da fonte</span>
+                <div class="accessibility-buttons">
+                  <button id="font-increase" class="accessibility-btn" aria-label="Aumentar tamanho da fonte" title="Aumentar fonte (A+)">
+                    <svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 3V17M3 10H17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M6 6H14M6 14H14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                  </button>
+                  <button id="font-decrease" class="accessibility-btn" aria-label="Diminuir tamanho da fonte" title="Diminuir fonte (A-)">
+                    <svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 10H17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M6 6H14M6 14H14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                  </button>
+                  <button id="font-reset" class="accessibility-btn" aria-label="Tamanho de fonte padrão" title="Fonte normal">
+                    <svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 6H14M6 10H14M6 14H14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                  </button>
+                </div>
+              </div>
+              <div class="accessibility-group">
+                <span class="accessibility-group-label">Visual</span>
+                <div class="accessibility-buttons">
+                  <button id="contrast-toggle" class="accessibility-btn" aria-label="Alto contraste" title="Alto contraste">
+                    <svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/><path d="M10 2V18M2 10H18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                  </button>
+                  <button id="grayscale-toggle" class="accessibility-btn" aria-label="Preto e branco" title="Preto e branco">
+                    <svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7" cy="10" r="3" fill="currentColor"/><circle cx="13" cy="10" r="3" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+                  </button>
+                  <button id="invert-toggle" class="accessibility-btn" aria-label="Inverter cores" title="Inverter cores">
+                    <svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="7" height="7" fill="currentColor"/><rect x="10" y="10" width="7" height="7" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 3V10M3 10H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </header>

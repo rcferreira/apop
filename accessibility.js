@@ -16,7 +16,8 @@
 
   // Elementos
   var body = document.body;
-  var accessibilityBar = document.getElementById('accessibility-bar');
+  var accessibilityToggle = document.getElementById('accessibility-toggle');
+  var accessibilityPanel = document.getElementById('accessibility-panel');
   var fontIncreaseBtn = document.getElementById('font-increase');
   var fontDecreaseBtn = document.getElementById('font-decrease');
   var fontResetBtn = document.getElementById('font-reset');
@@ -115,7 +116,44 @@
     if (invertToggleBtn) invertToggleBtn.setAttribute('aria-pressed', isInverted);
   }
 
-  // Barra sempre visível - removida funcionalidade de fechar
+  // Toggle do painel de acessibilidade (botão na header)
+  function togglePanel() {
+    if (!accessibilityPanel || !accessibilityToggle) return;
+    var isOpen = accessibilityPanel.getAttribute('aria-hidden') === 'false';
+    accessibilityPanel.setAttribute('aria-hidden', isOpen ? 'true' : 'false');
+    accessibilityToggle.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+    if (!isOpen) {
+      var firstBtn = accessibilityPanel.querySelector('.accessibility-btn');
+      if (firstBtn) setTimeout(function() { firstBtn.focus(); }, 80);
+    }
+  }
+
+  function closePanel() {
+    if (!accessibilityPanel || !accessibilityToggle) return;
+    accessibilityPanel.setAttribute('aria-hidden', 'true');
+    accessibilityToggle.setAttribute('aria-expanded', 'false');
+    accessibilityToggle.focus();
+  }
+
+  if (accessibilityToggle) {
+    accessibilityToggle.addEventListener('click', function(e) {
+      e.stopPropagation();
+      togglePanel();
+    });
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && accessibilityPanel && accessibilityPanel.getAttribute('aria-hidden') === 'false') {
+      closePanel();
+    }
+  });
+
+  document.addEventListener('click', function(e) {
+    if (accessibilityPanel && accessibilityPanel.getAttribute('aria-hidden') === 'false' &&
+        !accessibilityPanel.contains(e.target) && !accessibilityToggle.contains(e.target)) {
+      closePanel();
+    }
+  });
 
   // Event listeners
   if (fontIncreaseBtn) {
@@ -142,17 +180,17 @@
     invertToggleBtn.addEventListener('click', toggleInvert);
   }
 
-  // Navegação por teclado na barra
-  if (accessibilityBar) {
-    var buttons = accessibilityBar.querySelectorAll('.accessibility-btn');
-    buttons.forEach(function(btn, index) {
+  // Navegação por teclado no painel
+  if (accessibilityPanel) {
+    var panelButtons = accessibilityPanel.querySelectorAll('.accessibility-btn');
+    panelButtons.forEach(function(btn, index) {
       btn.addEventListener('keydown', function(e) {
-        if (e.key === 'ArrowRight' && index < buttons.length - 1) {
+        if (e.key === 'ArrowRight' && index < panelButtons.length - 1) {
           e.preventDefault();
-          buttons[index + 1].focus();
+          panelButtons[index + 1].focus();
         } else if (e.key === 'ArrowLeft' && index > 0) {
           e.preventDefault();
-          buttons[index - 1].focus();
+          panelButtons[index - 1].focus();
         }
       });
     });
@@ -177,12 +215,8 @@
   // Inicializar
   loadPreferences();
   updateFontButtons();
-  
-  // Garantir que a barra sempre esteja visível
-  if (accessibilityBar) {
-    accessibilityBar.classList.remove('is-hidden');
-  }
-  body.classList.remove('accessibility-bar-hidden');
+  if (accessibilityPanel) accessibilityPanel.setAttribute('aria-hidden', 'true');
+  if (accessibilityToggle) accessibilityToggle.setAttribute('aria-expanded', 'false');
 
   // Expor funções globalmente se necessário
   window.APOPAccessibility = {
