@@ -23,7 +23,6 @@
   var contrastToggleBtn = document.getElementById('contrast-toggle');
   var grayscaleToggleBtn = document.getElementById('grayscale-toggle');
   var invertToggleBtn = document.getElementById('invert-toggle');
-  var closeBtn = document.getElementById('accessibility-close');
 
   // Carregar preferências salvas
   function loadPreferences() {
@@ -116,24 +115,7 @@
     if (invertToggleBtn) invertToggleBtn.setAttribute('aria-pressed', isInverted);
   }
 
-  // Fechar barra
-  function closeBar() {
-    accessibilityBar.classList.add('is-hidden');
-    body.classList.add('accessibility-bar-hidden');
-    localStorage.setItem('apop-accessibility-bar-hidden', 'true');
-  }
-
-  // Mostrar barra se não estiver oculta
-  function showBarIfNeeded() {
-    var isHidden = localStorage.getItem('apop-accessibility-bar-hidden') === 'true';
-    if (isHidden) {
-      accessibilityBar.classList.add('is-hidden');
-      body.classList.add('accessibility-bar-hidden');
-    } else {
-      accessibilityBar.classList.remove('is-hidden');
-      body.classList.remove('accessibility-bar-hidden');
-    }
-  }
+  // Barra sempre visível - removida funcionalidade de fechar
 
   // Event listeners
   if (fontIncreaseBtn) {
@@ -158,10 +140,6 @@
 
   if (invertToggleBtn) {
     invertToggleBtn.addEventListener('click', toggleInvert);
-  }
-
-  if (closeBtn) {
-    closeBtn.addEventListener('click', closeBar);
   }
 
   // Navegação por teclado na barra
@@ -198,8 +176,13 @@
 
   // Inicializar
   loadPreferences();
-  showBarIfNeeded();
   updateFontButtons();
+  
+  // Garantir que a barra sempre esteja visível
+  if (accessibilityBar) {
+    accessibilityBar.classList.remove('is-hidden');
+  }
+  body.classList.remove('accessibility-bar-hidden');
 
   // Expor funções globalmente se necessário
   window.APOPAccessibility = {
