@@ -1,8 +1,8 @@
 /* ===== APOP - Site Institucional ===== */
 :root {
-  --color-primary: #0d5c2e;
-  --color-primary-dark: #094020;
-  --color-primary-light: #1a7a42;
+  --color-primary: #ff6b6b;
+  --color-primary-dark: #e55555;
+  --color-primary-light: #ff9999;
   --color-accent: #e8b923;
   --color-accent-dark: #c99a1a;
   --color-bg: #f8faf8;
@@ -16,9 +16,9 @@
   --radius: 16px;
   --radius-sm: 10px;
   --radius-pill: 999px;
-  --shadow: 0 4px 20px rgba(13, 92, 46, 0.08);
-  --shadow-hover: 0 8px 32px rgba(13, 92, 46, 0.15);
-  --shadow-lg: 0 12px 40px rgba(13, 92, 46, 0.12);
+  --shadow: 0 4px 20px rgba(255, 107, 107, 0.15);
+  --shadow-hover: 0 8px 32px rgba(255, 107, 107, 0.22);
+  --shadow-lg: 0 12px 40px rgba(255, 107, 107, 0.18);
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-fast: all 0.2s ease;
   --font-size-multiplier: 1;
@@ -26,8 +26,8 @@
 
 /* Alto contraste */
 .high-contrast {
-  --color-primary: #006400;
-  --color-primary-dark: #004000;
+  --color-primary: #ff6b6b;
+  --color-primary-dark: #e05555;
   --color-bg: #ffffff;
   --color-bg-alt: #ffffff;
   --color-text: #000000;
@@ -172,22 +172,23 @@ body {
 
 /* Barra de acessibilidade */
 .accessibility-bar {
-  /* position: fixed; */
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  background: var(--color-primary-dark);
-  color: #fff;
-  padding: 0.5rem 0;
+  background: #ffffff;
+  color: #1a1a1a;
+  padding: 0.35rem 0;
   z-index: 10000;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   display: block !important;
   visibility: visible !important;
   opacity: 1 !important;
   transform: translateY(0) !important;
-  --accessibility-bar-height: 48px;
+  --accessibility-bar-height: 40px;
   height: auto;
-  min-height: 48px;
+  min-height: 40px;
 }
 
 /* Barra sempre visível - removida classe is-hidden */
@@ -203,23 +204,24 @@ body {
 }
 
 .accessibility-label {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 500;
-  margin-right: 0.5rem;
+  margin-right: 0.4rem;
+  color: #1a1a1a;
 }
 
 .accessibility-btn {
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  color: #fff;
-  padding: 0.4rem 0.75rem;
+  background: rgba(255, 107, 107, 0.1);
+  border: 1px solid rgba(255, 107, 107, 0.3);
+  color: #ff6b6b;
+  padding: 0.3rem 0.65rem;
   border-radius: 6px;
   cursor: pointer;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 600;
   transition: all 0.2s ease;
-  min-width: 36px;
-  height: 36px;
+  min-width: 34px;
+  height: 34px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -247,8 +249,9 @@ body {
 }
 
 .accessibility-btn:hover:not(:disabled) {
-  background: rgba(255, 255, 255, 0.25);
-  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 107, 107, 0.2);
+  border-color: rgba(255, 107, 107, 0.5);
+  color: #e55555;
   transform: translateY(-1px);
 }
 
@@ -267,9 +270,9 @@ body {
 }
 
 .accessibility-btn[aria-pressed="true"] {
-  background: var(--color-accent);
-  color: var(--color-primary-dark);
-  border-color: var(--color-accent);
+  background: #ffd93d;
+  color: #1a1a1a;
+  border-color: #ffd93d;
 }
 
 .accessibility-close {
@@ -281,10 +284,6 @@ body {
 /* Header sempre abaixo da barra de acessibilidade - definido na regra principal do .header */
 
 @media (max-width: 768px) {
-  body {
-    /* padding-top: calc(var(--accessibility-bar-height, 85px) + var(--header-height, 60px)); */
-  }
-
   .accessibility-bar {
     padding: 0.4rem 0;
     --accessibility-bar-height: 85px;
@@ -880,7 +879,7 @@ body {
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 50%, #0a3520 100%);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 50%, var(--color-primary-dark) 100%);
   opacity: 0.85;
 }
 
@@ -1516,7 +1515,7 @@ body {
 
 /* ----- Footer ----- */
 .footer {
-  background: linear-gradient(135deg, var(--color-primary-dark) 0%, #0a3520 100%);
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary-dark) 100%);
   color: rgba(255, 255, 255, 0.9);
   padding: 2.5rem 1rem;
   text-align: center;
