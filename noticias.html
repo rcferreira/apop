@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Notícias e eventos da APOP">
+  <title>Notícias e Eventos | APOP</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="header-bar">
+      <div class="container header-inner">
+        <a href="index.html" class="logo">
+          <img src="scr/logo/Imagem1.jpg" alt="APOP" class="logo-img">
+        </a>
+        <nav class="nav" aria-label="Menu principal">
+          <button class="nav-toggle" aria-expanded="false" aria-controls="nav-wrap" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+          <div id="nav-wrap" class="nav-wrap">
+            <ul class="nav-menu">
+              <li><a href="index.html">Início</a></li>
+              <li class="has-dropdown"><a href="sobre.html">A APOP</a>
+                <ul class="submenu">
+                  <li><a href="sobre.html">Sobre</a></li>
+                  <li><a href="acoes.html">Ações</a></li>
+                </ul>
+              </li>
+              <li><a href="atletas.html">Atletas</a></li>
+              <li><a href="conquistas.html">Conquistas</a></li>
+              <li><a href="noticias.html">Notícias e Eventos</a></li>
+              <li><a href="participar.html">Participe</a></li>
+              <li class="has-dropdown"><a href="parceiros.html">Parcerias</a>
+                <ul class="submenu">
+                  <li><a href="parceiros.html">Parceiros</a></li>
+                  <li><a href="patrocinadores.html">Patrocinadores</a></li>
+                  <li><a href="apoio.html">Apoio (Vereadores)</a></li>
+                </ul>
+              </li>
+              <li><a href="transparencia.html">Transparência</a></li>
+              <li><a href="contato.html">Contato</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <h1 class="section-title">Notícias e eventos</h1>
+        <p class="section-intro">Participação em eventos, convocações e reconhecimentos da APOP (informações do projeto institucional).</p>
+        <ul class="acoes-list" style="max-width: 720px; margin: 0 auto 2rem;">
+          <li>Participação em eventos regionais, estaduais, nacionais e internacionais</li>
+          <li>Convocações para Seleção Paulista de natação e atletismo paralímpico</li>
+          <li>Convocações para Seleção Brasileira de natação e atletismo paralímpico</li>
+          <li>Palestras e cursos sobre inclusão e paradesporto</li>
+        </ul>
+        <div class="noticias-grid">
+          <article class="noticia-card">
+            <div class="noticia-data">Reconhecimento</div>
+            <h3>3ª Melhor Equipe do Estado</h3>
+            <p>A APOP é considerada atualmente a 3ª Melhor Equipe de natação paralímpica do Estado de São Paulo.</p>
+          </article>
+          <article class="noticia-card">
+            <div class="noticia-data">Seleção Brasileira</div>
+            <h3>Paralímpiada de Paris</h3>
+            <p>Eduardo dos Santos Pereira integra a Seleção Brasileira na Paralímpiada de Paris (Arremesso de Peso – F34).</p>
+          </article>
+          <article class="noticia-card">
+            <div class="noticia-data">Reconhecimento</div>
+            <h3>Selo de entidade inclusiva</h3>
+            <p>Reconhecimento de selo de entidade inclusiva (4 anos consecutivos). Inscrição no Conselho da Pessoa com Deficiência.</p>
+          </article>
+        </div>
+        <div class="eventos-proximos">
+          <h3>Próximos eventos</h3>
+          <p>Fique atento às nossas redes sociais e entre em contato para informações sobre próximos campeonatos e eventos.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p><strong>APOP</strong> – Associação Paradesportiva do Oeste Paulista · Utilidade Pública Municipal e Estadual</p>
+      <p class="footer-small">© 2025 APOP. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+  <script src="nav.js"></script>
+</body>
+</html>
