@@ -335,15 +335,15 @@ body {
 
 /* ----- Header ----- */
 .header {
-  /* position: fixed; */
-  /* top: var(--accessibility-bar-height, 48px); */
+  position: sticky;
+  top: var(--accessibility-bar-height, 48px);
   left: 0;
   right: 0;
   z-index: 9999;
   background: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  /* border-bottom: 1px solid rgba(226, 232, 228, 0.8); */
+  border-bottom: 1px solid rgba(226, 232, 228, 0.8);
   box-shadow: 0 2px 20px rgba(13, 92, 46, 0.06);
   transition: top 0.3s ease, var(--transition-fast);
   --header-height: 75px;
@@ -395,6 +395,8 @@ body {
   display: flex;
   align-items: center;
   gap: 1rem;
+  position: relative;
+  z-index: 10001;
 }
 
 .btn-contato {
@@ -486,13 +488,15 @@ body {
   visibility: hidden;
   transform: translateY(-10px);
   transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1), transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.25s;
-  z-index: 100;
+  z-index: 10002;
+  pointer-events: none;
 }
 
 .nav-menu li.has-dropdown:hover .submenu {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
+  pointer-events: auto;
 }
 
 .nav-menu .submenu li {
