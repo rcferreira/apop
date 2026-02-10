@@ -1024,14 +1024,13 @@ body {
 }
 
 .sobre-img {
-  height: 50%;
-  min-width: 438px;
-  width: 438px;
-  max-width: 100%;
+  width: 400px;
+  height: 480px !important;
   object-fit: cover;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   transition: var(--transition);
+  display: block;
 }
 
 .sobre-img:hover {
@@ -2166,10 +2165,9 @@ button:focus-visible {
   }
 
   .sobre-img {
-    min-width: 100%;
     width: 100%;
-    height: auto;
-    max-width: 100%;
+    height: 480px;
+    object-fit: cover;
   }
 
   .home-cards {
