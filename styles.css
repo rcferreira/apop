@@ -137,7 +137,7 @@ table, iframe, embed, object {
 
 body {
   margin: 0;
-  padding-top: var(--accessibility-bar-height, 48px);
+  /* padding-top: calc(var(--accessibility-bar-height, 48px) + var(--header-height, 75px)); */
   font-family: var(--font-body);
   font-size: calc(1.05rem * var(--font-size-multiplier));
   line-height: 1.6;
@@ -172,7 +172,7 @@ body {
 
 /* Barra de acessibilidade */
 .accessibility-bar {
-  position: fixed;
+  /* position: fixed; */
   top: 0;
   left: 0;
   right: 0;
@@ -181,12 +181,13 @@ body {
   padding: 0.5rem 0;
   z-index: 10000;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  min-height: 48px;
   display: block !important;
   visibility: visible !important;
   opacity: 1 !important;
   transform: translateY(0) !important;
   --accessibility-bar-height: 48px;
+  height: auto;
+  min-height: 48px;
 }
 
 /* Barra sempre visível - removida classe is-hidden */
@@ -281,17 +282,19 @@ body {
 
 @media (max-width: 768px) {
   body {
-    padding-top: var(--accessibility-bar-height, 85px);
+    /* padding-top: calc(var(--accessibility-bar-height, 85px) + var(--header-height, 60px)); */
   }
 
   .accessibility-bar {
-    min-height: 85px;
     padding: 0.4rem 0;
     --accessibility-bar-height: 85px;
+    height: auto;
+    min-height: 85px;
   }
 
   .header {
     top: var(--accessibility-bar-height, 85px);
+    --header-height: 60px;
   }
 
   .accessibility-bar-inner {
@@ -332,18 +335,19 @@ body {
 
 /* ----- Header ----- */
 .header {
-  position: fixed;
-  top: var(--accessibility-bar-height, 48px);
+  /* position: fixed; */
+  /* top: var(--accessibility-bar-height, 48px); */
   left: 0;
   right: 0;
   z-index: 9999;
   background: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(226, 232, 228, 0.8);
+  /* border-bottom: 1px solid rgba(226, 232, 228, 0.8); */
   box-shadow: 0 2px 20px rgba(13, 92, 46, 0.06);
   transition: top 0.3s ease, var(--transition-fast);
   --header-height: 75px;
+  width: 100%;
 }
 
 .header-bar {
@@ -863,7 +867,6 @@ body {
 .hero {
   position: relative;
   padding: 5rem 0 6rem;
-  margin-top: var(--header-height, 75px);
   min-height: 50vh;
   display: flex;
   align-items: center;
