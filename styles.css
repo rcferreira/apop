@@ -106,6 +106,25 @@ body {
 .nav-wrap {
   display: flex;
   align-items: center;
+  gap: 1rem;
+}
+
+.btn-contato {
+  padding: 0.6rem 1.25rem;
+  background: var(--color-primary);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: var(--radius-sm);
+  transition: var(--transition-fast);
+  white-space: nowrap;
+}
+
+.btn-contato:hover {
+  background: var(--color-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(13, 92, 46, 0.3);
 }
 
 .nav-menu {
@@ -257,6 +276,14 @@ body {
     border-radius: var(--radius);
     box-shadow: var(--shadow-lg);
     border: 1px solid var(--color-border);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .btn-contato {
+    margin: 1rem;
+    text-align: center;
   }
 
   .nav-wrap.is-open {
@@ -501,18 +528,19 @@ body {
 /* ----- Sobre - Imagens ----- */
 .sobre-imagens {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(438px, 1fr));
   gap: 1.5rem;
-  margin: 0 auto 2.5rem;
+  margin: 1rem auto 0;
   max-width: 1000px;
 }
 
 .sobre-img {
-  width: 100%;
-  height: auto;
+  height: 50%;
+  min-width: 438px;
+  width: 438px;
+  object-fit: cover;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  object-fit: cover;
   transition: var(--transition);
 }
 
@@ -1521,6 +1549,12 @@ button:focus-visible {
   .sobre-imagens {
     grid-template-columns: 1fr;
     gap: 1.25rem;
+  }
+
+  .sobre-img {
+    min-width: 100%;
+    width: 100%;
+    height: auto;
   }
 }
 
