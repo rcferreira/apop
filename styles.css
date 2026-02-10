@@ -281,17 +281,17 @@ body {
 
 @media (max-width: 768px) {
   body {
-    padding-top: var(--accessibility-bar-height, 44px);
+    padding-top: var(--accessibility-bar-height, 85px);
   }
 
   .accessibility-bar {
-    min-height: 44px;
+    min-height: 85px;
     padding: 0.4rem 0;
-    --accessibility-bar-height: 44px;
+    --accessibility-bar-height: 85px;
   }
 
   .header {
-    top: var(--accessibility-bar-height, 44px);
+    top: var(--accessibility-bar-height, 85px);
   }
 
   .accessibility-bar-inner {
@@ -612,7 +612,7 @@ body {
   }
 
   .nav-wrap {
-    top: calc(var(--header-height, 75px) + 48px + 1rem);
+    top: calc(var(--header-height, 75px) + var(--accessibility-bar-height, 48px) + 1rem);
   }
 
   .btn-contato {
@@ -621,11 +621,7 @@ body {
   }
 
   .nav-wrap.is-open {
-    max-height: min(600px, calc(100vh - var(--header-height, 75px) - 3rem));
-  }
-
-  .nav-wrap.is-open {
-    max-height: min(600px, calc(100vh - var(--header-height, 75px) - 48px - 3rem));
+    max-height: min(600px, calc(100vh - var(--header-height, 75px) - var(--accessibility-bar-height, 48px) - 3rem));
   }
 
   .nav-menu {
@@ -2279,7 +2275,7 @@ button:focus-visible {
   }
 
   .nav-wrap {
-    top: calc(var(--header-height, 60px) + 44px + 1rem);
+    top: calc(var(--header-height, 60px) + var(--accessibility-bar-height, 85px) + 1rem);
   }
 
   .numeros-grid {
